@@ -1,16 +1,8 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+# 지금 서울 날씨 & 나의 옷차림 메모
+- **배포 URL**: https://kminmouse.github.io/seoul-weather-memo/
+- **사용 기술**: React, Vite, Firebase (Authentication, Cloud Firestore), GitHub Pages
+- **사용 API**: Open-Meteo Forecast API (서울 기온·날씨·풍속 조회)
+- **주요 기능**:
+  1. 서울 실시간 기온 및 날씨 상태 조회
+  2. Google 계정 기반 Firebase 로그인/로그아웃
+  3. 사용자별 옷차림 한 줄 메모 Firestore 저장, 실시간 조회 및 삭제
