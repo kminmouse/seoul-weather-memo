@@ -61,10 +61,10 @@ export default function App() {
       return;
     }
 
+    // orderBy("createdAt", "desc") 제거
     const q = query(
       collection(db, "outfit_memos"),
-      where("uid", "==", user.uid),
-      orderBy("createdAt", "desc")
+      where("uid", "==", user.uid)
     );
 
     const unsubscribe = onSnapshot(
@@ -74,10 +74,11 @@ export default function App() {
           id: doc.id,
           ...doc.data(),
         }));
+        // 최신순 정렬을 자바스크립트에서 직접 처리
+        items.sort((a, b) => (b.createdAt?.seconds || 0) - (a.createdAt?.seconds || 0));
         setMemoList(items);
       },
       (error) => {
-        // 복합 색인(Index) 미생성 오류 시 콘솔 링크 클릭하여 생성하거나 orderBy 제거
         console.error("Firestore 조회 오류:", error);
       }
     );
